@@ -15,7 +15,7 @@ import java.io.IOException;
 public class WordCount {
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFs", "hdfs://namenode:8020");
+        conf.set("fs.defaultFs", "hdfs://hadoop001:8020");
         Job job = Job.getInstance(conf, "word count");
         job.setJarByClass(WordCount.class);
         job.setMapperClass(TokenizerMapper.class);
