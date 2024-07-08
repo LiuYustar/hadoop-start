@@ -19,7 +19,7 @@ public class LogAccumulator {
         }
 
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFs", "hdfs://namenode:8020");
+        conf.set("fs.defaultFs", "hdfs://hadoop001:8020");
         Job job = Job.getInstance(conf, "LogAccumulator");
         job.setJarByClass(LogAccumulator.class);
         job.setMapperClass(AccountMapper.class);

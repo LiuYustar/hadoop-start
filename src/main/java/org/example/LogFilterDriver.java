@@ -18,7 +18,7 @@ public class LogFilterDriver {
         }
 
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFs", "hdfs://namenode:8020");
+        conf.set("fs.defaultFs", "hdfs://hadoop001:8020");
         Job job = Job.getInstance(conf, "Log Filter");
         job.setJarByClass(LogFilterDriver.class);
         job.setMapperClass(LogFilterMapper.class);

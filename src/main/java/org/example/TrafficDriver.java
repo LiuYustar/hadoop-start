@@ -19,7 +19,7 @@ public class TrafficDriver {
             System.exit(-1);
         }
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFs", "hdfs://namenode:8020");
+        conf.set("fs.defaultFs", "hdfs://hadoop001:8020");
         Job job = Job.getInstance(conf, "Traffic Analysis");
         job.setJarByClass(TrafficDriver.class);
         job.setMapperClass(TrafficMapper.class);

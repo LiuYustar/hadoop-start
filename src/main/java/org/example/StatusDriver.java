@@ -8,7 +8,6 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.example.map.StatusMapper;
-import org.example.partitioner.StatusPartitioner;
 import org.example.reduce.StatusReducer;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ public class StatusDriver {
         }
 
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFs", "hdfs://namenode:8020");
+        conf.set("fs.defaultFs", "hdfs://hadoop001:8020");
         Job job = Job.getInstance(conf, "statusCode Partition");
         job.setJarByClass(StatusDriver.class);
         job.setMapperClass(StatusMapper.class);
